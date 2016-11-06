@@ -1,6 +1,6 @@
 package cn.ms.frame;
 
-public class MsFrameTest {
+public class BootstrapTest {
 
 	public static void main(String[] args) {
 		try {
