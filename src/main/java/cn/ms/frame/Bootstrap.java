@@ -1,5 +1,5 @@
 package cn.ms.frame;
 
-public class MsFrame {
+public class Bootstrap {
 
 }
