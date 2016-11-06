@@ -6,8 +6,7 @@ import cn.ms.frame.common.annotation.Plugin;
 public class Demo3 implements IPlugin {
 
 	public void init() throws Exception {
-		// TODO Auto-generated method stub
-		
+		System.out.println(getClass().getSimpleName()+"-IPlugin-init");		
 	}
 
 	public void start() throws Exception {

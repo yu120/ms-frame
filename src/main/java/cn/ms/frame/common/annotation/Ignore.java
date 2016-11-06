@@ -6,45 +6,35 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import cn.ms.frame.plugin.IPlugin;
-
 /**
- * 组件注解
+ * 忽略
  * 
  * @author lry
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.TYPE })
-public @interface Component {
-	
-	/**
-	 * 所属插件
-	 * 
-	 * @return
-	 */
-	Class<? extends IPlugin> plugin();
-	
-	/**
-	 * ID
-	 * 
-	 * @return
-	 */
-	String id() default "";
-	
-	/**
-	 * 权值
-	 * 
-	 * @return
-	 */
-	int order() default 0;
+public @interface Ignore {
 
 	/**
-	 * 名称
+	 * 是否忽略初始化异常
 	 * 
 	 * @return
 	 */
-	String name() default "";
-	
-	
+	boolean init() default true;
+
+	/**
+	 * 是否忽略启动异常
+	 * 
+	 * @return
+	 */
+	boolean start() default true;
+
+	/**
+	 * 是否忽略销毁异常
+	 * 
+	 * @return
+	 */
+	boolean destroy() default true;
+
 }
