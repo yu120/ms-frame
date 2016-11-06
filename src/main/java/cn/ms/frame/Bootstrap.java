@@ -5,9 +5,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import cn.ms.frame.common.FrameSupport;
 import cn.ms.frame.common.annotation.Component;
 import cn.ms.frame.common.type.ProcesserType;
-import cn.ms.frame.common.utils.ScanUtils;
 import cn.ms.frame.component.IComponent;
 import cn.ms.frame.extension.IExtension;
 import cn.ms.frame.plugin.IPlugin;
@@ -26,14 +26,14 @@ public enum Bootstrap implements IAdapter {
 
 	Bootstrap() {
 		//$NON-NLS-扫描插件$
-		Map<String, IPlugin> pluginMap = ScanUtils.scanPCE(IPlugin.class);
+		Map<String, IPlugin> pluginMap = FrameSupport.scanPCE(IPlugin.class);
 		if (!pluginMap.isEmpty()) {
 			for (IPlugin plugin : pluginMap.values()) {
 				pluginComponentMap.put(plugin, new ArrayList<IComponent>());
 			}
 
 			//$NON-NLS-扫描组件$
-			Map<String, IComponent> componentMap = ScanUtils.scanPCE(IComponent.class);
+			Map<String, IComponent> componentMap = FrameSupport.scanPCE(IComponent.class);
 			if (!componentMap.isEmpty()) {
 				for (IComponent component : componentMap.values()) {
 					Component componentAnnotation = component.getClass().getAnnotation(Component.class);
@@ -53,7 +53,7 @@ public enum Bootstrap implements IAdapter {
 		}
 
 		//$NON-NLS-扫描扩展点$
-		Map<String, IExtension> extensionMapTemp = ScanUtils.scanPCE(IExtension.class);
+		Map<String, IExtension> extensionMapTemp = FrameSupport.scanPCE(IExtension.class);
 		if (!extensionMapTemp.isEmpty()) {
 			extensionMap.putAll(extensionMapTemp);
 		}
@@ -61,17 +61,17 @@ public enum Bootstrap implements IAdapter {
 
 	public void init() throws Exception {
 		//$NON-NLS-初始化组件、插件$
-		ScanUtils.doProcesser(pluginComponentMap, ProcesserType.INIT);
+		FrameSupport.doProcesser(pluginComponentMap, ProcesserType.INIT);
 	}
 
 	public void start() throws Exception {
 		//$NON-NLS-启动组件、插件$
-		ScanUtils.doProcesser(pluginComponentMap, ProcesserType.START);
+		FrameSupport.doProcesser(pluginComponentMap, ProcesserType.START);
 	}
 
 	public void destroy() throws Exception {
 		//$NON-NLS-销毁组件、插件$
-		ScanUtils.doProcesser(pluginComponentMap, ProcesserType.DESTROY);
+		FrameSupport.doProcesser(pluginComponentMap, ProcesserType.DESTROY);
 	}
 
 }

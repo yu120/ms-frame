@@ -1,4 +1,4 @@
-package cn.ms.frame.common.utils;
+package cn.ms.frame.common;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,7 +23,7 @@ import cn.ms.frame.plugin.IPlugin;
  * 
  * @author lry
  */
-public class ScanUtils {
+public class FrameSupport {
 
 	/**
 	 * 扫描插件/组件/扩展点
