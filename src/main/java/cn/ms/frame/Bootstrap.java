@@ -13,7 +13,7 @@ import cn.ms.frame.extension.IExtension;
 import cn.ms.frame.plugin.IPlugin;
 
 /**
- * 启动
+ * 微框架主入口
  * 
  * @author lry
  */
@@ -25,6 +25,9 @@ public enum Bootstrap implements IAdapter {
 	public Map<IPlugin, List<IComponent>> pluginComponentMap = new LinkedHashMap<IPlugin, List<IComponent>>();
 
 	Bootstrap() {
+		//TODO 读取配置文件,实现插件、组件、扩展点的初始化?
+		
+		
 		//$NON-NLS-扫描插件$
 		Map<String, IPlugin> pluginMap = FrameSupport.scanPCE(IPlugin.class);
 		if (!pluginMap.isEmpty()) {
