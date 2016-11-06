@@ -1,4 +1,4 @@
-package cn.ms.frame.annotation;
+package cn.ms.frame.type;
 
 public enum AnnotationType {
 

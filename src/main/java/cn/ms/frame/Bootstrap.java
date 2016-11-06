@@ -10,11 +10,11 @@ import java.util.ServiceLoader;
 
 import cn.ms.frame.annotation.Component;
 import cn.ms.frame.annotation.Extension;
-import cn.ms.frame.annotation.AnnotationType;
 import cn.ms.frame.annotation.Plugin;
 import cn.ms.frame.component.IComponent;
 import cn.ms.frame.extension.IExtension;
 import cn.ms.frame.plugin.IPlugin;
+import cn.ms.frame.type.AnnotationType;
 
 /**
  * 启动
