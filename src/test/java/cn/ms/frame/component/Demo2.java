@@ -1,6 +1,6 @@
 package cn.ms.frame.component;
 
-import cn.ms.frame.annotation.Component;
+import cn.ms.frame.common.annotation.Component;
 
 @Component(order=20)
 public class Demo2 implements IComponent {

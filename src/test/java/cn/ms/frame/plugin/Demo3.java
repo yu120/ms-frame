@@ -1,6 +1,6 @@
 package cn.ms.frame.plugin;
 
-import cn.ms.frame.annotation.Plugin;
+import cn.ms.frame.common.annotation.Plugin;
 
 @Plugin(id="demo2", order=10)
 public class Demo3 implements IPlugin {

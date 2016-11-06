@@ -1,6 +1,6 @@
 package cn.ms.frame.extension;
 
-import cn.ms.frame.annotation.Extension;
+import cn.ms.frame.common.annotation.Extension;
 
 @Extension
 public class Demo1 implements IExtension {

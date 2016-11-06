@@ -1,4 +1,4 @@
-package cn.ms.frame.annotation;
+package cn.ms.frame.common.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -7,14 +7,14 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 组件注解
+ * 扩展点注解
  * 
  * @author lry
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.TYPE })
-public @interface Component {
+public @interface Extension {
 
 	/**
 	 * 名称

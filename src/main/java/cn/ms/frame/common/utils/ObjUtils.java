@@ -1,4 +1,4 @@
-package cn.ms.frame.common;
+package cn.ms.frame.common.utils;
 
 public class ObjUtils {
 
