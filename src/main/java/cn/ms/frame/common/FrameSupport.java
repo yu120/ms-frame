@@ -117,11 +117,13 @@ public class FrameSupport {
 				for (IComponent component : componentList) {
 					Ignore ignore=component.getClass().getAnnotation(Ignore.class);
 					boolean ignoreComponent = false;
-					switch (processerType) {
-						case INIT:ignoreComponent=ignore.init();break;
-						case START:ignoreComponent=ignore.start();break;
-						case DESTROY:ignoreComponent=ignore.destroy();break;
-						default:new RuntimeException("非法类型, processerType == "+processerType);break;
+					if(ignore!=null){
+						switch (processerType) {
+							case INIT:ignoreComponent=ignore.init();break;
+							case START:ignoreComponent=ignore.start();break;
+							case DESTROY:ignoreComponent=ignore.destroy();break;
+							default:new RuntimeException("非法类型, processerType == "+processerType);break;
+						}						
 					}
 					
 					if(ignore==null || !ignoreComponent){//不忽略
@@ -148,11 +150,13 @@ public class FrameSupport {
 				//$NON-NLS-初始化指定插件下的所有组件$
 				Ignore ignore=plugin.getClass().getAnnotation(Ignore.class);
 				boolean ignorePlugin = false;
-				switch (processerType) {
-					case INIT:ignorePlugin=ignore.init();break;
-					case START:ignorePlugin=ignore.start();break;
-					case DESTROY:ignorePlugin=ignore.destroy();break;
-					default:new RuntimeException("非法类型, processerType == "+processerType);break;
+				if(ignore!=null){
+					switch (processerType) {
+						case INIT:ignorePlugin=ignore.init();break;
+						case START:ignorePlugin=ignore.start();break;
+						case DESTROY:ignorePlugin=ignore.destroy();break;
+						default:new RuntimeException("非法类型, processerType == "+processerType);break;
+					}
 				}
 				if(ignore==null || !ignorePlugin){//不忽略
 					switch (processerType) {
